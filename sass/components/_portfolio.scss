@@ -1,0 +1,197 @@
+/* Portfolio page */
+
+.portfolio {
+  @media (max-width: $max-desktop-bp) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: $min-desktop-bp) {
+  padding: 94px 0;
+  }
+
+  &__buttons {
+    margin: 0 0 25px;
+
+    @media (min-width: $min-tablet-bp) {
+      max-width: 611px;
+      text-align: center;
+      white-space: nowrap;
+      margin: 0 auto 30px;
+    }
+    
+    @media (min-width: $min-desktop-bp) {
+    margin: 0 auto 50px;
+    }
+
+    &-list {
+      // display: flex;
+      // justify-content: center;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    
+    @media (max-width: $max-tablet-bp) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &__button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.625;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--black-text-color);
+    background-color: var(--white-back-color);
+    padding: 6px 21px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color var(--transition-time) var(--cubic-bezier),
+      background-color var(--transition-time) var(--cubic-bezier),
+      box-shadow var(--transition-time) var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+      background-color: var(--blue-color);
+      color: var(--white-text-color-1);
+      outline-style: none;
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+/* Item-cards */
+
+.cards {
+  margin-bottom: 0;
+  padding-left: 0;
+
+  @media (min-width: $min-tablet-bp) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+
+  &__item {
+    background-color: var(--white-text-color-1);
+
+    @media (min-width: $min-tablet-bp) {
+      margin-left: 30px;
+      margin-top: 30px;
+      display: flex;
+      flex-basis: calc(100% / 2 - 30px);
+    }
+
+    @media (min-width: $min-desktop-bp) {
+      flex-basis: calc(100% / 3 - 30px);
+    }
+  }
+
+  &__item:not(:last-child) {
+    @media (max-width: $max-tablet-bp) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    @include transition(box-shadow);
+
+    @media (min-width: $min-tablet-bp) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover .cards__overlay-text {
+      transform: translateY(0);
+    }
+  }
+
+  &__overlay-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__thumb {
+    @media (max-width: $max-tablet-bp) {
+    max-width: 450px;
+    }
+
+    @media (min-width: $min-tablet-bp) {
+    max-width: 354px;
+    }
+
+    @media (min-width: $min-desktop-bp) {
+    max-width: 370px;
+    }
+  }
+
+  &__overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    @include transition(transform);
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 63px 24px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: var(--white-text-color-1);
+    background-color: rgba(33, 150, 243, 0.9);
+  }
+
+  &__meta {
+    padding: 20px 24px;
+    border-left: 1px solid rgba(238, 238, 238, 1);
+    border-right: 1px solid rgba(238, 238, 238, 1);
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+    
+    @media (min-width: $min-tablet-bp) {
+      flex-grow: 1;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--black-text-color);
+    margin: 0;
+    padding: 0 0 4px;
+  }
+
+  &__description {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: var(--grey-text-color);
+    margin: 0;
+  }
+}

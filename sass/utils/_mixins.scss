@@ -1,0 +1,3 @@
+@mixin transition($type: background-color) {
+  transition: $type var(--transition-time) var(--cubic-bezier);
+}

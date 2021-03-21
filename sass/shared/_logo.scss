@@ -1,0 +1,65 @@
+/* Main Logo */
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.66;
+  letter-spacing: 0.03em;
+  color: var(--blue-color);
+  text-decoration: none;
+
+  &--top {
+    @include transition(text-shadow);
+
+    @media (max-width: $max-tablet-bp) {
+        margin: 0;
+        padding: 6px 0;
+    }
+
+    @media (min-width: $min-tablet-bp) and (max-width: $max-desktop-bp) {
+        margin-right: 88px;
+        padding: 5px 0;
+    }
+
+    @media (min-width: $min-desktop-bp) {
+      font-size: 26px;
+      line-height: 1.2;
+      margin-right: 93px;
+      padding: 13px 0;
+    }
+
+    &:hover,
+    &:focus {
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.26);
+    }
+  }
+
+  &--bottom {
+    display: block;
+    margin-bottom: 20px;
+
+    @include transition(text-shadow);
+
+    @media (min-width: $min-desktop-bp) {
+      font-size: 26px;
+      line-height: 1.2;
+    }
+
+    &:hover,
+    &:focus {
+      text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.12),
+        0px 4px 4px rgba(255, 255, 255, 0.06),
+        1px 4px 6px rgba(255, 255, 255, 0.26);
+    }
+  }
+
+  &__subtext--top {
+      color: var(--top-logo-subtext);
+  }
+
+  &__subtext--bottom {
+    color: var(--white-text-color-1);
+  }
+}

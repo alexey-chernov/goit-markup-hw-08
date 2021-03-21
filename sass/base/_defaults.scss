@@ -1,0 +1,64 @@
+:focus {
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+  //  containers  
+
+.container {
+  min-width: 200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $min-mobile-bp) and (max-width: $max-tablet-bp) {
+    max-width: 480px;
+  }
+
+  @media (min-width: $min-tablet-bp) and (max-width: $max-desktop-bp) {
+    max-width: 768px;
+  }
+
+  @media (min-width: $min-desktop-bp) {
+    max-width: 1200px;
+  }
+
+}
+
+
+
+/* заголовки h2 */
+
+.secondary-title {
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--black-text-color);
+  margin: 0;
+
+
+  @media (max-width: $max-desktop-bp) {
+    font-size: 28px;
+    line-height: 1.262;
+  }
+
+
+  @media (min-width: $min-desktop-bp) {
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}

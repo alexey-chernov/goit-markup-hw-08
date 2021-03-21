@@ -1,0 +1,136 @@
+/* header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  border-bottom: 1px solid var(--white-back-color);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    min-height: 79px;
+
+    @media (max-width: $max-tablet-bp) {
+        min-height: 59px;
+    }
+  }
+}
+
+.menu,
+.menu__list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__list {
+    @media (max-width: $max-tablet-bp) {
+      display: none;
+  }
+}
+
+// .contacts__item:not(:last-child),
+.menu__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.menu__link {
+  color: var(--black-text-color);
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  padding: 32px 0;
+
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: var(--blue-color);
+  }
+}
+
+.contacts {
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  
+  @media (max-width: $max-tablet-bp) {
+      display: none;
+  }
+
+  @media (min-width: $min-desktop-bp) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {    
+    @media (max-width: $max-desktop-bp) {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: $min-desktop-bp) {
+    margin-right: 30px;
+    }     
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.66;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--grey-text-color);
+    display: flex;
+    align-items: center;
+
+    @include transition(color);
+
+    @media (min-width: $min-desktop-bp) {
+      padding: 32px 0;
+      font-size: 14px;
+      line-height: 1.14;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--blue-color);
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+
+    @media (min-width: $min-tablet-bp) {
+      margin-right: 8px;
+    }
+
+    @media (min-width: $min-desktop-bp) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.menu__link--active {
+  position: relative;
+  color: var(--blue-color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    display: block;
+    text-decoration: underline;
+    height: 4px;
+    width: 100%;
+    background-color: var(--blue-color);
+    border-radius: 2px;
+  }
+}
